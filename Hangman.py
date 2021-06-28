@@ -65,7 +65,7 @@ chosen_word=random.choice(word_list)
 print(chosen_word)
 for x in range(0,len(chosen_word)):
   Display.append("_")
-print(Display)
+print(" ".join(Display))
 print(stages[lives])
 
 while not "".join(Display)==chosen_word:
