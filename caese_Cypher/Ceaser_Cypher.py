@@ -3,7 +3,6 @@ again=True
 print(logo)
 
 def caesar(word,shift):
-    # global New_word
     New_word=''
 
     for x in word:
