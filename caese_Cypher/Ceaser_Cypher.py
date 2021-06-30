@@ -1,3 +1,4 @@
+from typing import Tuple
 from art import logo, alphabet
 again=True
 print(logo)
@@ -21,14 +22,23 @@ def caesar(word,shift):
     
 
 while again==True:
-    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    r=True
+    while r:
+        direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+        if direction=='encode' or direction=='decode':
+            r=False
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
     shift=shift%26
     caesar(text,shift)
-    if input("Type 'yes' if want to go again, Otherwise type'no': \n")=='no':
-        again=False
-        print('Thank you so much')
+    r=True
+    while r:
+        again=input("Type 'yes' if want to go again, Otherwise type'no': \n").lower()
+        if again=='no':
+            r=False
+            print('\nThank you so much')
+        if again=='no' or again=='yes':
+            r=False
 
 
 
