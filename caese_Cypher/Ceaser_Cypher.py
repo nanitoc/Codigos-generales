@@ -33,11 +33,11 @@ while again==True:
     caesar(text,shift)
     r=True
     while r:
-        again=input("Type 'yes' if want to go again, Otherwise type'no': \n").lower()
-        if again=='no':
-            r=False
+        block=input("Type 'yes' if want to go again, Otherwise type'no': \n").lower()
+        if block=='no':
+            again=False
             print('\nThank you so much')
-        if again=='no' or again=='yes':
+        if block=='no' or block=='yes':
             r=False
 
 
