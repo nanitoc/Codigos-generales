@@ -32,16 +32,15 @@ while True:
             except:
                 print('Valor invalido, introduzca un numero')
 
-
+    for x in operations:                                       #for para printear las operaciones disponible
+        print(x)
     while True:                                                    #loop para asegurar que seleccione un simbolo 
-        for x in operations:                                       #for para printear las operaciones disponible
-            print(x)
-        symbol=input('Pick an operation from the lines above. ')
+        symbol=input('Pick an operation: ')
         if symbol in operations:
             break
     
     while True:                                                 #loop para asegurar que entre un numero
-            num2=input('\nwhat is the second number?: ')
+            num2=input('\nwhat is the next number?: ')
             try:
                 num2=float(num2)
                 break
@@ -49,7 +48,6 @@ while True:
                 print('Valor invalido, introduzca un numero')
 
     
-
     if next=='n':                                               #nueva operacion
         result=operations[symbol](num1,num2)                      #operacion para llamar la funcion seleccionada del diccionario
         print(f"{num1} {symbol} {num2} = {result}")                 #printeo el resultado con la nueva operacion
