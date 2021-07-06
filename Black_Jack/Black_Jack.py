@@ -4,15 +4,15 @@ from art import logo
 os.system('cls')
 
 #Lists
-carts=[11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+cards=[11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 User_score=[]
 Pc_score=[] 
 pc="Computer"
 user="You"
 
 #funcion para dar una carta a la lista en el argumento
-def get_a_car():
-    list=random.choice(carts)
+def get_a_cart():
+    list=random.choice(cards)
     
     return list
 #Para printear scores
@@ -23,6 +23,7 @@ def show_scores():
 #para printear el ganador
 def result(winner):
     os.system('cls')
+    print(logo)
     print(f"\n\nYour final hand: {User_score}, final score: {sum(User_score)}")
     print(f"Computer's final hand: {Pc_score}, final score: {sum(Pc_score)}")
     if winner=="draw":
@@ -36,17 +37,17 @@ def play():
     print(logo)
     User_score.clear()
     Pc_score.clear()
-    draw_a_cart="y"
+    draw_a_card="y"
     # 2 cartas inicialmente al user & dealer
     for x in range(1,3):
-        x=get_a_car()
+        x=get_a_cart()
         #si sale una A y la suma se pasa de 21, la A valdra 1
         if x==11 and (sum(User_score)+11)>21:
             User_score.append(1)   #se le agrega 1 en vez de 11
         #si la suma de 11 no pasa de 21 se le agrega 11
         else:
             User_score.append(x)
-        x=get_a_car()
+        x=get_a_cart()
         #si sale una A y la suma se pasa de 21, la A valdra 1
         if x==11 and (sum(Pc_score)+11)>21:
             Pc_score.append(1)   #se le agrega 1 en vez de 11
@@ -65,16 +66,16 @@ def play():
 
 
         #loop para ver si quiere otra carta
-        while draw_a_cart=="y":
+        while draw_a_card=="y":
             
             #validacion de datos (solo acepta "y" or "n")
             while True:
-                draw_a_cart=input("Type 'y' to get another card, type 'n' to pass:")
-                if draw_a_cart=="y" or draw_a_cart=="n":
+                draw_a_card=input("Type 'y' to get another card, type 'n' to pass:")
+                if draw_a_card=="y" or draw_a_card=="n":
                     break
             #si el usario toma otra carta
-            if draw_a_cart=="y":
-                x=get_a_car()
+            if draw_a_card=="y":
+                x=get_a_cart()
                 #si sale una A y la suma se pasa de 21, la A valdra 1
                 if x==11 and (sum(User_score)+11)>21:
                     User_score.append(1)   #se le agrega 1 en vez de 11
@@ -84,12 +85,12 @@ def play():
                 show_scores()     #printeo el score presente
                 if sum(User_score)>21:
                     result(pc)          #gana la pc
-                    draw_a_cart="n"     #el usuario ha perdido y rompe el bucle de preguntar si quiere otra carta          
+                    draw_a_card="n"     #el usuario ha perdido y rompe el bucle de preguntar si quiere otra carta          
             #si el usario pasa de cartas
             else:
-                draw_a_cart="n"     #el usuario pasa de cartas entonces se rompe el while loop 
+                draw_a_card="n"     #el usuario pasa de cartas entonces se rompe el while loop 
                 while sum(Pc_score)<17: #mientras el score de la pc sea menor a 17 dale una carta
-                    x=get_a_car()
+                    x=get_a_cart()
                     #si sale una A y la suma se pasa de 21, la A valdra 1
                     if x==11 and (sum(Pc_score)+11)>21:
                         Pc_score.append(1)   #se le agrega 1 en vez de 11
