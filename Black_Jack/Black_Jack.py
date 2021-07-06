@@ -96,9 +96,10 @@ def play():
                     #si la suma de 11 no pasa de 21 se le agrega 11
                     else:
                         Pc_score.append(x)
+
                 if sum(User_score)==sum(Pc_score):  #hay un empate
                     result("draw")          #printeo un empate
-                if sum(User_score)>sum(Pc_score):   #gana el usuario
+                elif sum(User_score)>sum(Pc_score):   #gana el usuario
                     result(user)
                 elif sum(Pc_score)<=21:             #gana la pc
                     result(pc)
