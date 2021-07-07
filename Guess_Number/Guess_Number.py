@@ -13,7 +13,6 @@ def check(guess,number):
         print(f"You got it! The answer is {number}")
         return True
 
-
 def play():
     number=random.randint(1,101)
     print("Welcome to the Number Guessing Game!\nI'm thinking of a number between 1 and 100.")
@@ -24,17 +23,15 @@ def play():
     if level=='easy': lives=10
     elif level=='hard': lives=5
     while True:
+        print(f"You have {lives} attempts remaining to guess the number.")
         while True:                                                 #loop para asegurar que entre un numero
-            print(f"You have {lives} attempts remaining to guess the number.")
-            guess=input('\nMake a guess: ')
-            
+            guess=input('\nMake a guess: ')           
             try:
                 guess=float(guess)
                 break
             except:print('Valor invalido, introduzca un numero')
         lives-=1
         if check(guess,number) or lives==0: break
-        
     if lives==0:
         print("You've run out of guesses, you lose.")
         return
