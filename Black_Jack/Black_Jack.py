@@ -11,7 +11,7 @@ pc="Computer"
 user="You"
 
 #funcion para dar una carta a la lista en el argumento
-def get_a_cart():
+def get_a_card():
     list=random.choice(cards)
     
     return list
@@ -40,14 +40,14 @@ def play():
     draw_a_card="y"
     # 2 cartas inicialmente al user & dealer
     for x in range(1,3):
-        x=get_a_cart()
+        x=get_a_card()
         #si sale una A y la suma se pasa de 21, la A valdra 1
         if x==11 and (sum(User_score)+11)>21:
             User_score.append(1)   #se le agrega 1 en vez de 11
         #si la suma de 11 no pasa de 21 se le agrega 11
         else:
             User_score.append(x)
-        x=get_a_cart()
+        x=get_a_card()
         #si sale una A y la suma se pasa de 21, la A valdra 1
         if x==11 and (sum(Pc_score)+11)>21:
             Pc_score.append(1)   #se le agrega 1 en vez de 11
@@ -75,7 +75,7 @@ def play():
                     break
             #si el usario toma otra carta
             if draw_a_card=="y":
-                x=get_a_cart()
+                x=get_a_card()
                 #si sale una A y la suma se pasa de 21, la A valdra 1
                 if x==11 and (sum(User_score)+11)>21:
                     User_score.append(1)   #se le agrega 1 en vez de 11
@@ -90,7 +90,7 @@ def play():
             else:
                 draw_a_card="n"     #el usuario pasa de cartas entonces se rompe el while loop 
                 while sum(Pc_score)<17: #mientras el score de la pc sea menor a 17 dale una carta
-                    x=get_a_cart()
+                    x=get_a_card()
                     #si sale una A y la suma se pasa de 21, la A valdra 1
                     if x==11 and (sum(Pc_score)+11)>21:
                         Pc_score.append(1)   #se le agrega 1 en vez de 11
