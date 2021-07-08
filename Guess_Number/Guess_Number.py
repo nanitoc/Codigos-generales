@@ -16,7 +16,6 @@ def check(guess,number):
 def play():
     number=random.randint(1,101)
     print("Welcome to the Number Guessing Game!\nI'm thinking of a number between 1 and 100.")
-    print(f"shhh, the secret number is {number}")
     while True:
         level=input("Choose a difficulty. Type 'easy' or 'hard': ").lower()
         if level=='easy' or level=='hard': break
