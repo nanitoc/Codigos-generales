@@ -1,4 +1,5 @@
 import random
+from art import logo
 import os
 os.system('cls')
 
@@ -14,6 +15,7 @@ def check(guess,number):
         return True
 
 def play():
+    print(logo)
     number=random.randint(1,101)
     print("Welcome to the Number Guessing Game!\nI'm thinking of a number between 1 and 100.")
     while True:

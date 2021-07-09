@@ -1,13 +1,15 @@
 from typing import Tuple
 from art import logo, alphabet
 again=True
-print(logo)
+
 
 import os
 os.system('cls')
+print(logo)
 
 # Funcion que desplaza las letras de la palabra
 def caesar(word,shift):
+  
     New_word=''
 
     for x in word:                                              #accedo a cada caracter de la palabra
@@ -27,6 +29,7 @@ def caesar(word,shift):
 
 #Bucle principal
 while again==True:
+    
     r=True
     #bloqueo de entrada de direction
     while r:

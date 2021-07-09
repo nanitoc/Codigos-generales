@@ -7,7 +7,6 @@ lives=6
 print(logo)
 Display=[]
 chosen_word=random.choice(word_list)
-print(f'Pssst, the solution is {chosen_word}.')
 for x in range(0,len(chosen_word)):
   Display.append("_")
 print(" ".join(Display))
