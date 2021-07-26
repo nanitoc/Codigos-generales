@@ -8,7 +8,7 @@ score=0
 #para seleccionar el numero ramdom
 def select_random():
     while True:                   #bloqueo para que A y B no sean iguales
-        x=random.randint(0,len(data))    #selecciono un numero random
+        x=random.randint(0,len(data)-1)    #selecciono un numero random
         if data.index(A)!=x:    break      #si a y x son diferentes salgo del bucle
     return x
 
@@ -47,7 +47,7 @@ def main():
 while True:
     os.system('cls')
     print(logo)
-    A=data[random.randint(0,len(data))]         #selecciono un valor para A
+    A=data[random.randint(0,len(data)-1)]         #selecciono un valor para A
     main()
     while True:                                             #loop para asegurar que seleccione y or n
         next=input("\ntype 'y' if you want to use the result, type 'n' if you want to do a new operation: ").lower()
