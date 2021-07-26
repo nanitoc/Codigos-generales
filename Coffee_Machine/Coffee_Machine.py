@@ -3,14 +3,18 @@ import os
 # Global variables
 options=["espresso","latte","cappuccino","report","off"]
 money=0
+spent=[] #lista para los ingredientes agotados
 
 #funcion para ver si hay con que preparar el cafe
 def check_resources(sel):
+    spent.clear()
     result=0
     condicion=True
     for x in MENU[sel]["ingredients"]:
         result=resources[x]-MENU[sel]["ingredients"][x]
-        if result<0:  condicion=False
+        if result<0: 
+            condicion=False
+            spent.append(x)
     return condicion
 
 #funcion para actualizar resources
@@ -61,7 +65,9 @@ def main():
     if selection in options[0:2]:       #se procesa el cafe seleccionado
         if check_resources(selection):  #para saber si hay con que prepararlo
             making(selection)
-        else: print("Sorry there is not enough resources.")
+        else: 
+            for x in spent:
+                print(f"Sorry there is not enough {x}.")
        
     elif selection=="report":   #se imprime el reporte
         print(f"""
