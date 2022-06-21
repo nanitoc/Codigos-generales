@@ -7,13 +7,14 @@ import cv2 as cv
 # is what you need to find in train image
 # Save it in the same directory
 # with the name image.jpg 
-query_img = cv.imread('Train/IMG1.jpg')
-train_img = cv.imread('Train/IMG2.jpg')
+query_img = cv.imread('Proyecto Tesis/Train/IMG1.jpg')
+train_img = cv.imread('Proyecto Tesis/Train/IMG2.jpg')
   
 # Convert it to grayscale
 query_img_bw = cv.cvtColor(query_img,cv.COLOR_BGR2GRAY)
 train_img_bw = cv.cvtColor(train_img,cv.COLOR_BGR2GRAY)
   
+
 # Initialize the ORB detector algorithm
 orb = cv.ORB_create()
   
